@@ -1,0 +1,58 @@
+<div class="row d-flex justify-content-center">
+  <div class="col-md-6 mt-5">
+    <form (submit)="saveMemberDetails($event)" class="ui equal width form raised segment">
+      <h1 class="ui large center aligned header">Personal Information</h1>
+      <div class="fields">
+        <div class="required field">
+            <label for="fname">First Name</label>
+            <div class="ui left icon input">
+              <input *ngIf="id !== undefined" value="{{ memberDetails.fname }}" type="text" maxlength="20" placeholder="First Name" name="fname" id="fname" required>
+              <input *ngIf="id === undefined" type="text" maxlength="20" placeholder="First Name" name="fname" id="fname" required>
+              <i class="ui user icon"></i>
+            </div>
+        </div>
+        <div class="required field">
+          <label for="lname">Last Name</label>
+          <div class="ui left icon input">
+            <input *ngIf="id !== undefined" value="{{ memberDetails.lname }}" type="text" maxlength="20" placeholder="Last Name" name="lname" id="lname" required>
+            <input *ngIf="id === undefined" type="text" maxlength="20" placeholder="Last Name" name="lname" id="lname" required>
+            <i class="ui user icon"></i>
+          </div>
+        </div>
+      </div>
+      <div class="fields">
+        <div class="required field">
+          <label for="reg">Registration Number</label>
+          <div class="ui left icon input">
+            <input *ngIf="id !== undefined" value="{{ memberDetails.regno }}" type="text" maxlength="20" placeholder="Reg No" name="regno" id="reg" required>
+            <input *ngIf="id === undefined" type="text" maxlength="20" placeholder="Reg No" name="regno" id="reg" required>
+            <i class="id card icon"></i>
+          </div>
+        </div>
+      </div>
+      <div class="fields">
+        <div class="required field">
+          <label for="date">Year of Admission</label>
+          <div class="ui left icon input">
+            <input *ngIf="id !== undefined" value="{{ memberDetails.year }}" type="number" min="2015" max="2020" name="year" id="date" required>
+            <input *ngIf="id === undefined" type="number" min="2015" max="2020" name="year" id="date" required>
+            <i class="ui calendar icon"></i>
+          </div>
+        </div>
+      </div>
+      <div class="ui bottom attached buttons">
+        <button class="ui green button">Save</button>
+      </div>
+    </form>
+    <div *ngIf="id === undefined">
+      <a routerLink="/members" class="ui blue circular label">
+        <i class="ui left arrow icon"></i> Back
+      </a>
+    </div>
+    <div *ngIf="id !== undefined">
+      <a routerLink="/members/{{ id }}" class="ui blue circular label">
+        <i class="ui left arrow icon"></i> Back
+      </a>
+    </div>
+  </div>
+</div>
