@@ -1,6 +1,6 @@
-# KSUCUMC
+# Voters Register
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.4.
+Voters register is a web project developed in angular and Nodejs. It basically eases the registration of voters, checking of voter details as captured in the system and marking voters who have voted against their profiles to prevent them from voting again.
 
 ## Development server
 
